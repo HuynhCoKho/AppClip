@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AppClip Toon</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Trình tạo clip hoạt hình">
+        <div class="control-panel">
+          <div class="brand">
+            <span class="mark">AC</span>
+            <div>
+              <h1>AppClip Toon</h1>
+              <p>Biến prompt thành video AI hoặc bản xem thử hoạt hình</p>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Mô tả video</span>
+            <textarea
+              id="prompt"
+              rows="9"
+              placeholder="Ví dụ: Ultra realistic medical CGI, National Geographic documentary style, educational biology animation..."
+            ></textarea>
+          </label>
+
+          <div class="grid-2">
+            <label class="field">
+              <span>Model Sora</span>
+              <select id="aiModel">
+                <option value="sora-2" selected>Sora 2 - nhanh</option>
+                <option value="sora-2-pro">Sora 2 Pro - đẹp hơn</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Thời lượng</span>
+              <select id="duration">
+                <option value="4">4 giây</option>
+                <option value="8">8 giây</option>
+                <option value="12" selected>12 giây</option>
+                <option value="300">5 phút - ghép 25 clip Sora</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Kích thước</span>
+            <select id="aiSize">
+              <option value="1280x720" selected>Ngang 1280 x 720</option>
+              <option value="720x1280">Dọc 720 x 1280</option>
+              <option value="1792x1024">Rộng 1792 x 1024</option>
+              <option value="1024x1792">Dọc 1024 x 1792</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button id="aiGenerate" class="primary" type="button">Tạo video AI thật</button>
+            <button id="generate" type="button">Xem thử canvas cũ</button>
+            <button id="record" type="button">Xuất video canvas</button>
+          </div>
+
+          <div id="status" class="status" role="status">Muốn ra phim thật, chạy bằng server rồi bấm Tạo video AI thật.</div>
+
+          <div class="storyboard" aria-label="Storyboard">
+            <h2>Storyboard</h2>
+            <ol id="scenes"></ol>
+          </div>
+        </div>
+
+        <div class="stage-panel">
+          <div class="topbar">
+            <div>
+              <strong id="clipTitle">Video Sora</strong>
+              <span id="clipMeta">Chọn prompt rồi tạo video AI</span>
+            </div>
+            <button id="play" type="button" aria-label="Phát lại" hidden>Phát lại</button>
+          </div>
+          <div id="aiEmpty" class="ai-empty">
+            <strong>Chưa có video AI</strong>
+            <span>Bấm Tạo video AI thật để gọi Sora và nhận MP4.</span>
+          </div>
+          <video id="aiVideo" class="ai-video" controls hidden></video>
+          <canvas id="stage" width="1280" height="720" aria-label="Khung clip" hidden></canvas>
+          <div class="progress">
+            <span id="progressFill"></span>
+          </div>
+          <a id="download" class="download" hidden>Mở video vừa xuất</a>
+          <a id="aiDownload" class="download" hidden>Tải video AI</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js?v=8"></script>
+  </body>
+</html>

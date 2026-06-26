@@ -1,0 +1,15 @@
+{
+  "name": "appclip-sora",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "python server.py"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  }
+}

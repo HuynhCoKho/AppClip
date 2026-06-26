@@ -1,0 +1,6 @@
+__pycache__/
+generated_videos/
+.vercel/
+node_modules/
+.env
+*.pyc
