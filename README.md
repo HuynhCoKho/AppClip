@@ -14,6 +14,18 @@
 
 Không mở trực tiếp `index.html` nếu muốn gọi API. Hãy chạy server để giữ API key ở phía máy chủ:
 
+### Cách dễ nhất
+
+Double click file:
+
+```text
+Chay AppClip.bat
+```
+
+Lần đầu file sẽ hỏi `OPENAI_API_KEY` và lưu vào `.env`. Những lần sau chỉ cần double click là app tự mở trình duyệt.
+
+### Cách chạy bằng terminal
+
 Nếu máy có Python:
 
 ```powershell
